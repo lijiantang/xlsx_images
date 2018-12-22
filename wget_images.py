@@ -22,7 +22,6 @@ data_dic = {}
 
 for rx in range(2, ws.max_row+1):
    # temp_list = []
-    pid = rx
     w1 = ws.cell(row=rx, column=1).value
     w2 = ws.cell(row=rx, column=2).value
     #temp_list = [w1] 
