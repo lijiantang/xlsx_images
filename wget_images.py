@@ -8,14 +8,17 @@
 from openpyxl.reader.excel import load_workbook
 import re
 import wget
+import sys
+
 #取第一张表
-wb = load_workbook('数据源.xlsx')
+table = sys.argv[1]
+wb = load_workbook('%s.xlsx' % table)
 sheetnames = wb.get_sheet_names()
 ws = wb.get_sheet_by_name(sheetnames[0])
 
-print ("Title:",ws.title)
-print ("Row:", ws.max_row)
-print ("Cols:",ws.max_column)
+print ("表名:",ws.title)
+print ("总行数:", ws.max_row)
+print ("总列数:",ws.max_column)
 
 #建立字典存储表格内容
 data_dic = {} 
