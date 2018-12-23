@@ -9,6 +9,9 @@ from openpyxl.reader.excel import load_workbook
 import re
 import wget
 import sys
+import datetime
+import os
+
 
 #取第一张表
 table = sys.argv[1]
@@ -30,15 +33,21 @@ for rx in range(2, ws.max_row+1):
     #temp_list = [w1] 
     data_dic[w1] = w2
 
+####创建文件夹
+today = datetime.datetime.now()
+todayStr = today.strftime("%Y%m%d%H%M")
+if not os.path.exists(todayStr):
+    os.mkdir(todayStr)
+
 
 for keys,values in data_dic.items():
    # print (keys,values)
-    a = str(values)
-    if a == 'None':
+    url = str(values)
+    if url == 'None':
         continue
     strinfo = re.compile('60x60')
-    b = strinfo.sub('600x600',a)
+    newurl = strinfo.sub('600x600',url)
     #print (b)
-    c_out = 'picture/' + str(keys) + '.jpg'
-    wget.download(b, c_out)
+    jpg_name = todayStr + '/' + str(keys) + '.jpg'
+    wget.download(newurl, jpg_name)
 
