@@ -28,10 +28,8 @@ print ("总列数:",ws.max_column)
 data_dic = {}
 
 for rx in range(2, ws.max_row+1):
-   # temp_list = []
     pid = rx - 1
     w1 = ws.cell(row=rx, column=2).value
-    #temp_list = [w1]
     data_dic[pid] = w1
 
 
@@ -41,7 +39,6 @@ for keys,values in data_dic.items():
         continue
     pic_name = 'media/' + str(values) + '.png'
     old_name = 'media/image'+ str(keys) + '.png'
-    #print (b)
     os.rename(old_name,pic_name)
     print (old_name,"------->",pic_name)
 
