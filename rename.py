@@ -38,7 +38,7 @@ for keys,values in data_dic.items():
     if values == 'None':
         continue
     pic_name = 'media/' + str(values) + '.png'
-    old_name = 'media/image'+ str(keys) + '.png'
+    old_name = 'media/image' + str(keys) + '.png'
     os.rename(old_name,pic_name)
     print (old_name,"------->",pic_name)
 
