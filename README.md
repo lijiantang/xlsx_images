@@ -1,4 +1,4 @@
-# wget_xl_images
+# xlsx_images
 下载xlsx表格的图片
 ## install
     pip3 install --user -r requirements.txt
