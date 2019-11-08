@@ -1,4 +1,4 @@
 openpyxl==2.5.12
 wget==3.2
-datatime==4.3
+datetime==4.3
 pillow==5.3.0

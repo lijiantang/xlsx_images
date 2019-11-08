@@ -1,0 +1,5 @@
+#user的用户变量Path
+C:\Users\letote\AppData\Local\Microsoft\WindowsApps
+#系统变量Path
+C:\Python37\Scripts\
+C:\Python37
